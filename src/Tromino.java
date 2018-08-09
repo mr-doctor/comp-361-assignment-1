@@ -149,17 +149,20 @@ public class Tromino {
 		return stringBuilder.toString();
 	}
 
-	public boolean distinct(List<Integer> a, int n, int val) {
-		List<Integer> ascending = mergeSort(a, true);
+	public boolean distinct(List<Integer> a, int val) {
+		List<Integer> aSorted = mergeSort(a, true);
 		List<Integer> aPrime = new ArrayList<>();
 
-		for (Integer anAscending : ascending) {
+		for (Integer anAscending : aSorted) {
 			aPrime.add(val - anAscending);
 		}
 		aPrime = mergeSort(aPrime, true);
 
-		
-
+		for (int i = 0; i < aSorted.size(); i++) {
+			if (aSorted.get(i).equals(aPrime.get(i))) {
+				return true;
+			}
+		}
 		return false;
 	}
 
