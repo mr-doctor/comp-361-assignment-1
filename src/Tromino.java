@@ -159,7 +159,7 @@ public class Tromino {
 		aPrime = mergeSort(aPrime, true);
 
 		for (int i = 0; i < aSorted.size(); i++) {
-			if (aSorted.get(i).equals(aPrime.get(i))) {
+			if (aSorted.get(i) - (aPrime.get(i)) == val) {
 				return true;
 			}
 		}
@@ -206,9 +206,9 @@ public class Tromino {
 	}
 
 	public static void main(String[] args) {
-		int size = 8;
+		int size = 5;
 
-		Tromino t = new Tromino(size, 1, 1);
+		Tromino t = new Tromino(size, 0, 0);
 		t.tile(size, 0, 0);
 
 	}
